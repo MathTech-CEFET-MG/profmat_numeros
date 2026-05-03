@@ -1,0 +1,85 @@
+﻿Instituição,Sigla,Estado,Região,Categoria administrativa,Quantidade de dissertações na base
+Universidade de Brasília,UnB,DF,Centro-Oeste,Federal,185
+Universidade Federal de Catalão,UFCAT,GO,Centro-Oeste,Federal,107
+Universidade Federal de Goiás,UFG,GO,Centro-Oeste,Federal,231
+Universidade Federal de Jataí,UFJ,GO,Centro-Oeste,Federal,61
+Universidade Estadual de Mato Grosso do Sul,UEMS,MS,Centro-Oeste,Estadual,54
+Universidade Federal da Grande Dourados,UFGD,MS,Centro-Oeste,Federal,42
+Universidade Federal de Mato Grosso do Sul,UFMS,MS,Centro-Oeste,Federal,142
+Universidade Federal de Mato Grosso,UFMT,MT,Centro-Oeste,Federal,135
+Universidade Federal de Rondonópolis,UFR,MT,Centro-Oeste,Federal,13
+Universidade do Estado de Mato Grosso,UNEMAT,MT,Centro-Oeste,Estadual,92
+Universidade Federal de Alagoas,UFAL,AL,Nordeste,Federal,147
+Universidade Estadual de Feira de Santana,UEFS,BA,Nordeste,Estadual,68
+Universidade Estadual de Santa Cruz,UESC,BA,Nordeste,Estadual,106
+Universidade Estadual do Sudoeste da Bahia,UESB,BA,Nordeste,Estadual,111
+Universidade Federal da Bahia,UFBA,BA,Nordeste,Federal,109
+Universidade Federal do Oeste da Bahia,UFOB,BA,Nordeste,Federal,22
+Universidade Federal do Recôncavo da Bahia,UFRB,BA,Nordeste,Federal,76
+Universidade Federal do Vale do São Francisco,UNIVASF,BA,Nordeste,Federal,95
+Universidade Estadual do Ceará,UECE,CE,Nordeste,Estadual,78
+Universidade Federal do Cariri,UFCA,CE,Nordeste,Federal,140
+Universidade Federal do Ceará,UFC,CE,Nordeste,Federal,216
+Universidade Regional do Cariri,URCA,CE,Nordeste,Estadual,35
+Universidade da Integração Internacional da Lusofonia Afro-Brasileira,UNILAB,CE,Nordeste,Federal,29
+Universidade Estadual do Maranhão,UEMA,MA,Nordeste,Estadual,88
+Universidade Federal do Maranhão,UFMA,MA,Nordeste,Federal,111
+Universidade Estadual da Paraíba,UEPB,PB,Nordeste,Estadual,59
+Universidade Federal da Paraíba,UFPB,PB,Nordeste,Federal,157
+Universidade Federal de Campina Grande,UFCG,PB,Nordeste,Federal,95
+Universidade Federal Rural de Pernambuco,UFRPE,PE,Nordeste,Federal,130
+Instituto Federal do Piauí,IFPI,PI,Nordeste,Federal,75
+Universidade Estadual do Piauí,UESPI,PI,Nordeste,Estadual,68
+Universidade Federal do Piauí,UFPI,PI,Nordeste,Federal,184
+Universidade Federal Rural do Semi-Árido,UFERSA,RN,Nordeste,Federal,162
+Universidade Federal do Rio Grande do Norte,UFRN,RN,Nordeste,Federal,79
+Universidade Federal de Sergipe,FUFS,SE,Nordeste,Federal,132
+Universidade Federal do Acre,UFAC,AC,Norte,Federal,47
+Universidade Federal do Amazonas,UFAM,AM,Norte,Federal,86
+Universidade do Estado do Amazonas,UEA,AM,Norte,Estadual,10
+Universidade Federal do Amapá,UNIFAP,AP,Norte,Federal,91
+Universidade Federal do Oeste do Pará,UFOPA,PA,Norte,Federal,53
+Universidade Federal do Pará,UFPA,PA,Norte,Federal,203
+Universidade Federal de Rondônia,UNIR,RO,Norte,Federal,70
+Universidade Federal de Roraima,UFRR,RR,Norte,Federal,29
+Universidade Federal do Tocantins,UFT,TO,Norte,Federal,117
+Universidade Federal do Espírito Santo,UFES,ES,Sudeste,Federal,155
+Centro Federal de Educação Tecnológica de Minas Gerais,CEFET-MG,MG,Sudeste,Federal,38
+Universidade Federal de Alfenas,UNIFAL,MG,Sudeste,Federal,2
+Universidade Federal de Juiz de Fora,UFJF,MG,Sudeste,Federal,114
+Universidade Federal de Lavras,UFLA,MG,Sudeste,Federal,38
+Universidade Federal de Ouro Preto,UFOP,MG,Sudeste,Federal,39
+Universidade Federal de São João del-Rei,UFSJ,MG,Sudeste,Federal,186
+Universidade Federal de Uberlândia,UFU,MG,Sudeste,Federal,26
+Universidade Federal de Viçosa,UFV,MG,Sudeste,Federal,113
+Universidade Federal do Triângulo Mineiro,UFTM,MG,Sudeste,Federal,86
+Universidade Federal dos Vales do Jequitinhonha e Mucuri,UFVJM,MG,Sudeste,Federal,54
+Colégio Pedro II,CPII,RJ,Sudeste,Federal,69
+Instituto de Matemática Pura e Aplicada,IMPA,RJ,Sudeste,Particular,131
+Pontifícia Universidade Católica do Rio de Janeiro,PUC,RJ,Sudeste,Particular,78
+Universidade Estadual do Norte Fluminense Darcy Ribeiro,UENF,RJ,Sudeste,Estadual,131
+Universidade Federal Fluminense,UFF,RJ,Sudeste,Federal,90
+Universidade Federal Rural do Rio de Janeiro,UFRRJ,RJ,Sudeste,Federal,133
+Universidade Federal do Estado do Rio de Janeiro,UNIRIO,RJ,Sudeste,Federal,129
+Universidade Federal do Rio de Janeiro,UFRJ,RJ,Sudeste,Federal,79
+Universidade do Estado do Rio de Janeiro,UERJ,RJ,Sudeste,Estadual,164
+Instituto Federal de São Paulo,IFSP,SP,Sudeste,Federal,53
+Universidade Estadual Paulista Júlio de Mesquita Filho,UNESP,SP,Sudeste,Estadual,276
+Universidade Estadual de Campinas,UNICAMP,SP,Sudeste,Estadual,87
+Universidade Federal de São Carlos,UFSCAR,SP,Sudeste,Federal,116
+Universidade Federal de São Paulo,UNIFESP,SP,Sudeste,Federal,52
+Universidade Federal do ABC,UFABC,SP,Sudeste,Federal,147
+Universidade de São Paulo,USP,SP,Sudeste,Estadual,165
+Universidade Estadual de Londrina,UEL,PR,Sul,Estadual,79
+Universidade Estadual de Maringá,UEM,PR,Sul,Estadual,104
+Universidade Estadual de Ponta Grossa,UEPG,PR,Sul,Estadual,53
+Universidade Estadual do Oeste do Paraná,UNIOESTE,PR,Sul,Estadual,14
+Universidade Federal do Paraná,UFPR,PR,Sul,Federal,92
+Universidade Tecnológica Federal do Paraná,UTFPR,PR,Sul,Federal,189
+Instituto Federal do Rio Grande do Sul,IFRS,RS,Sul,Federal,8
+Universidade Federal de Santa Maria,UFSM,RS,Sul,Federal,77
+Universidade Federal do Pampa,UNIPAMPA,RS,Sul,Federal,4
+Universidade Federal do Rio Grande,FURG,RS,Sul,Federal,46
+Universidade Federal da Fronteira Sul,UFFS,SC,Sul,Federal,52
+Universidade Federal de Santa Catarina,UFSC,SC,Sul,Federal,107
+Universidade do Estado de Santa Catarina,UDESC,SC,Sul,Estadual,27
