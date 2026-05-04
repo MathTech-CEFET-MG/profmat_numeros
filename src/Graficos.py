@@ -16,7 +16,47 @@ def OrdemDecrescenteOuCrescente(df, x, organizacao):
 
     df = df.sort_values(by=x, ascending=verifica)
     return df
+ 
+def gerar_grafico_barras(csv, x, y, titulo, caminho_saida, coluna_agrupar, coluna_valor=None, funcao_agg=None, ordem='decrescente', cor=None):
 
+    if x == 'Contagem' or y == 'Contagem':
+        df = csv.groupby(coluna_agrupar).size().rename('Contagem').reset_index()
+    else:
+        df = csv.groupby(coluna_agrupar).agg({coluna_valor: funcao_agg}).reset_index()
+
+
+    coluna_para_ordenar = 'Contagem' if (x == 'Contagem' or y == 'Contagem') else coluna_valor
+    bool_ordem = (ordem == 'crescente')
+    df_ordenado = df.sort_values(by=coluna_para_ordenar, ascending=bool_ordem)
+
+
+    cor_grafico = cor if cor else coluna_agrupar
+
+    fig = px.bar(
+        df_ordenado,
+        x=x,
+        y=y,
+        title=titulo,
+        color=cor_grafico,
+        width=1300
+    )
+
+    fig.write_html("../docs/numbers/Graficos/" + caminho_saida)
+
+    
+
+gerar_grafico_barras(
+    csv= csv_instituicoes,
+    x= 'Categoria administrativa',
+    y= 'Quantidade de dissertações na base',
+    titulo= 'Dissertações por Categoria Adiministrativa',
+    caminho_saida='grafico_dissertacoes_categoria.html',
+    coluna_agrupar='Categoria administrativa',
+    coluna_valor='Quantidade de dissertações na base',
+    funcao_agg='sum',
+    ordem = 'crescente'
+
+)
 
 """ grafico de dissertacoes por instituicao  """
 instituicao_counts_df = csv_dissertacao.groupby('Instituição Corrigida').size().rename('Contagem').reset_index()
