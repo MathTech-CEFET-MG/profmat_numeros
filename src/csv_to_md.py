@@ -7,7 +7,7 @@ from pathlib import Path
 from years        import create_years,   add_to_year
 from schools      import create_schools, add_to_school
 from dissertation import create_dissertation
-from numbers      import create_numbers
+from Numbers      import create_numbers
 
 # Input CVS files
 csv_path = Path("csv")
