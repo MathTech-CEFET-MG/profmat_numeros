@@ -3,7 +3,7 @@
 
 ## Comandos para executar o mkdocs
 
-Para sinnncronizar o uv
+Para sincronizar o uv
 ```
 uv sync
 ```
