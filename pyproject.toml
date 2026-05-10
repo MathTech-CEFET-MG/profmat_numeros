@@ -9,4 +9,5 @@ dependencies = [
     "mkdocs-material>=9.6.17",
     "numpy>=2.4.4",
     "pandas>=3.0.2",
+    "pathlib>=1.0.1",
 ]
