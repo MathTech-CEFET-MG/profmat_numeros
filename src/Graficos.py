@@ -1,9 +1,15 @@
 import plotly.express as px
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
-csv_dissertacao = pd.read_csv('../csv/teste_atualizado.csv')
-csv_instituicoes = pd.read_csv('../csv/instituicoes_profmat_classificadas.csv')
+diretorio_atual = Path(__file__).parent
+
+caminho_csv_dissertacao = diretorio_atual.parent / 'csv' / 'teste_atualizado.csv'
+csv_dissertacao = pd.read_csv(caminho_csv_dissertacao)
+
+caminho_csv_instituicao = diretorio_atual.parent / 'csv' / 'instituicoes_profmat_classificadas.csv'
+csv_instituicoes = pd.read_csv(caminho_csv_instituicao)
 
 def OrdemDecrescenteOuCrescente(df, x, organizacao):
     if organizacao == 'decrescente':
