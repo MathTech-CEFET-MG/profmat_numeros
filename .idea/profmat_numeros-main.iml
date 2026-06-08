@@ -7,7 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/csv" />
       <excludeFolder url="file://$MODULE_DIR$/docs" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.13 (profmat_numeros-main) (2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.13 (profmat_numeros)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
