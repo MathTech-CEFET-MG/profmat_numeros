@@ -9,7 +9,7 @@ from plotly import figure_factory
 
 diretorio_atual = Path(__file__).parent
 
-caminho_csv_dissertacao = diretorio_atual.parent / 'csv' / 'teste_atualizado.csv'
+caminho_csv_dissertacao = diretorio_atual.parent / 'csv' / 'todas_as_dissertacoes.csv'
 csv_dissertacao = pd.read_csv(caminho_csv_dissertacao)
 
 caminho_csv_instituicao = diretorio_atual.parent / 'csv' / 'instituicoes_profmat_classificadas.csv'
@@ -338,4 +338,115 @@ fig.update_layout(
 )
 print(df_vagas_melt[df_vagas_melt['Sigla IES'] == 'CEFET'].to_string())
 fig.write_html("../docs/numbers/Graficos/grafico_vagas_vs_dissertacoes.html")
+
+""" 1) Evolução anual nacional: Vagas Ofertadas vs Dissertações (barras agrupadas) """
+df_evolucao = df_total[['Ano', 'Vagas', 'Dissertações']].sort_values('Ano')
+
+fig_evolucao = go.Figure()
+fig_evolucao.add_trace(go.Bar(
+    x=df_evolucao['Ano'], y=df_evolucao['Vagas'],
+    name='Vagas Ofertadas', marker=dict(color='#2196F3')
+))
+fig_evolucao.add_trace(go.Bar(
+    x=df_evolucao['Ano'], y=df_evolucao['Dissertações'],
+    name='Dissertações Defendidas', marker=dict(color='#FF5722')
+))
+fig_evolucao.update_layout(
+    title='Evolução Nacional: Vagas Ofertadas vs Dissertações Defendidas por Ano',
+    xaxis=dict(title='Ano', type='category'),
+    yaxis_title='Quantidade',
+    barmode='group',
+    width=1300
+)
+fig_evolucao.write_html("../docs/numbers/Graficos/grafico_evolucao_vagas_dissertacoes.html")
+
+""" 2) Ranking das instituições com mais dissertações (top 20) """
+top_instituicoes = (
+    csv_dissertacao.groupby('Instituição Corrigida')
+    .size()
+    .rename('Dissertações')
+    .reset_index()
+    .sort_values('Dissertações', ascending=False)
+    .head(20)
+)
+
+fig_ranking = px.bar(
+    top_instituicoes.sort_values('Dissertações'),
+    x='Dissertações', y='Instituição Corrigida',
+    title='Top 20 Instituições com Mais Dissertações Defendidas',
+    color='Dissertações',
+    color_continuous_scale='Blues',
+    width=1300
+)
+fig_ranking.update_layout(yaxis_title='Instituição', height=700)
+fig_ranking.write_html("../docs/numbers/Graficos/grafico_ranking_instituicoes.html")
+
+""" 3) Crescimento da rede: nº de instituições com dissertações defendidas por ano """
+instituicoes_por_ano = (
+    csv_dissertacao.groupby('Ano Corrigido')['Instituição Corrigida']
+    .nunique()
+    .rename('Instituições Ativas')
+    .reset_index()
+    .sort_values('Ano Corrigido')
+)
+
+fig_crescimento = px.bar(
+    instituicoes_por_ano, x='Ano Corrigido', y='Instituições Ativas',
+    title='Crescimento da Rede PROFMAT: Instituições com Dissertações Defendidas por Ano',
+    text='Instituições Ativas',
+    width=1300
+)
+fig_crescimento.update_layout(xaxis=dict(type='category'), yaxis_title='Nº de Instituições')
+fig_crescimento.update_traces(marker_color='#4CAF50', textposition='outside')
+fig_crescimento.write_html("../docs/numbers/Graficos/grafico_crescimento_rede.html")
+
+regioes_fixas = sorted(csv_instituicoes['Região'].dropna().unique())
+
+""" 4) Distribuição de vagas ofertadas por Região, com dropdown de ano """
+vagas_com_regiao = (
+    df_vagas_melt[df_vagas_melt['Cidade'] != 'Total Geral']
+    .merge(csv_instituicoes[['Sigla', 'Região']], left_on='Sigla IES', right_on='Sigla', how='left')
+)
+vagas_com_regiao = vagas_com_regiao[vagas_com_regiao['Região'].notna()]
+
+anos_vagas_disponiveis = sorted(vagas_com_regiao['Ano'].unique())
+opcoes_ano_pizza = ['Todos os Anos'] + anos_vagas_disponiveis
+
+
+def valores_pizza_regiao(ano):
+    dados = vagas_com_regiao if ano == 'Todos os Anos' else vagas_com_regiao[vagas_com_regiao['Ano'] == ano]
+    soma = dados.groupby('Região')['Vagas'].sum()
+    return [float(soma.get(r, 0)) for r in regioes_fixas]
+
+
+fig_vagas_regiao = go.Figure(data=[go.Pie(
+    labels=regioes_fixas,
+    values=valores_pizza_regiao('Todos os Anos')
+)])
+
+botoes_pizza = []
+for opcao in opcoes_ano_pizza:
+    label_botao = 'Todos os Anos' if opcao == 'Todos os Anos' else str(opcao)
+    botoes_pizza.append(dict(
+        label=label_botao,
+        method='update',
+        args=[
+            {'values': [valores_pizza_regiao(opcao)]},
+            {'title.text': f'Distribuição de Vagas Ofertadas por Região ({label_botao})'}
+        ]
+    ))
+
+fig_vagas_regiao.update_layout(
+    updatemenus=[dict(
+        active=0, buttons=botoes_pizza,
+        x=0.5, xanchor='center', y=1.15, yanchor='top', direction='down'
+    )],
+    title=dict(
+        text='Distribuição de Vagas Ofertadas por Região (Todos os Anos)',
+        x=0.5, xanchor='center', y=0.98, yanchor='top'
+    ),
+    margin=dict(t=160),
+    width=900, height=650
+)
+fig_vagas_regiao.write_html("../docs/numbers/Graficos/grafico_vagas_por_regiao_pizza.html")
 
