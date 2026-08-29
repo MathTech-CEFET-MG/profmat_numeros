@@ -4,10 +4,9 @@ import csv
 import hashlib
 from pathlib import Path
 
-from years        import create_years,   add_to_year
-from schools      import create_schools, add_to_school
-from dissertation import create_dissertation
-from Numbers      import create_numbers
+from years           import create_years,   add_to_year
+from schools         import create_schools, add_to_school
+from dissertation    import create_dissertation
 
 # Input CVS files
 csv_path = Path("csv")
@@ -19,8 +18,6 @@ docs_path          = Path("docs")
 dissertations_path = docs_path / "dissertations"
 schools_path       = docs_path / "schools"
 years_path         = docs_path / "years"
-numbers_path       = docs_path / "numbers" / "numbers.md"
-
 
 #------------------------------------------------------------------------------#
 def hash_row(data):
@@ -68,7 +65,7 @@ def main():
 
             ii += 1
 
-    create_numbers(numbers_path, ii)
+    # create_numbers(numbers_path, ii)
 
     print(f"{ii} arquivos gerados com sucesso")
 
