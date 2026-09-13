@@ -59,4 +59,4 @@ df_total['Cidade'] = 'Geral'
 
 regioes_fixas = sorted(csv_instituicoes['Região'].dropna().unique())
 
-caminho_saida_graficos = diretorio_atual.parent.parent / 'docs' / 'numbers' / 'Graficos'
+caminho_saida_graficos = diretorio_atual.parent.parent / 'docs' / 'numbers' / 'graficos'
